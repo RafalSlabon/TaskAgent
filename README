@@ -1,1 +1,2 @@
-Task Agent is a RESTful Web Service that allows running tasks on remote host.
+Task Agent is a RESTful Web Service that allows running tasks on local host(from point of view of Task Agent).
+Tasks can be trigger/monitor by http requests.
