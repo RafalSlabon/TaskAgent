@@ -43,6 +43,13 @@ public class ProcessTask {
         processes.remove(id);
     }
 
+    @GET
+    @Path("/status/{id}")
+    @Produces("application/xml")
+    public ProcessStatus status(@PathParam("id") String id) {
+        return new ProcessStatus();
+    }
+
     private void checkIfExist(String id) {
         if (processes.get(id) == null)
             throw new InvalidId();

@@ -27,6 +27,13 @@ public class ProcessTaskTest extends TaskAgentTest {
         webResource.path("/process/stop/" + id).post();
     }
 
+    @Test
+    public void should_get_process_status() throws Exception {
+        String id = newId();
+        ProcessStatus ps = webResource.path("/process/status/" + id).get(ProcessStatus.class);
+        Assert.assertNotNull(ps);
+    }
+
     private String newId() {
         return webResource.path("/process/newId").get(String.class);
     }
